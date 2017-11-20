@@ -18,8 +18,6 @@
 -include vendor/rockchip/rk3328/BoardConfigVendor.mk
 -include device/rockchip/common/BoardConfig.mk
 
-TARGET_PREBUILT_KERNEL := kernel/arch/arm64/boot/Image
-
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -32,39 +30,66 @@ TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
+TARGET_PREBUILT_KERNEL := kernel/arch/arm64/boot/Image
+PRODUCT_PACKAGE_OVERLAYS += device/rockchip/rk3328/overlay
 
-TARGET_BOARD_PLATFORM := rk3328
-TARGET_BOARD_PLATFORM_GPU := mali450
 
 # Disable emulator for "make dist" until there is a 64-bit qemu kernel
 BUILD_EMULATOR := false
+TARGET_BOARD_PLATFORM := rk3328
+TARGET_BOARD_PLATFORM_GPU := mali450
+BOARD_USE_DRM := true
 
-#MALLOC_IMPL := dlmalloc
-MALLOC_SVELTE := true
+# RenderScript
+# OVERRIDE_RS_DRIVER := libnvRSDriver.so
+BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53
+BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a53
+# DISABLE_RS_64_BIT_DRIVER := true
 
-# Copy RK3328 own init.rc file
-# TARGET_PROVIDES_INIT_RC := true
+TARGET_USES_64_BIT_BCMDHD := true
+TARGET_USES_64_BIT_BINDER := true
 
-GRAPHIC_MEMORY_PROVIDER := dma_buf
+# HACK: Build apps as 64b for volantis_64_only
+ifneq (,$(filter ro.zygote=zygote64, $(PRODUCT_DEFAULT_PROPERTY_OVERRIDES)))
+TARGET_PREFER_32_BIT_APPS :=
+TARGET_SUPPORTS_64_BIT_APPS := true
+endif
 
-//MAX-SIZE=800M, for generate out/.../system.img
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1208860800
-
-DEVICE_PACKAGE_OVERLAYS += device/rockchip/rk3328/overlay
-
-# Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
-    WITH_DEXPREOPT := true
-  else
-    WITH_DEXPREOPT := false
-  endif
+ifneq ($(filter %box, $(TARGET_PRODUCT)), )
+TARGET_BOARD_PLATFORM_PRODUCT ?= box
+else
+ ifneq ($(filter %vr, $(TARGET_PRODUCT)), )
+   TARGET_BOARD_PLATFORM_PRODUCT ?= vr
+else
+TARGET_BOARD_PLATFORM_PRODUCT ?= tablet
+endif
 endif
 
 ENABLE_CPUSETS := true
 
-BOARD_WITH_MEM_OPTIMISE := true
+# Enable Dex compile opt as default
+# WITH_DEXPREOPT := true
 
+BOARD_NFC_SUPPORT := false
+BOARD_HAS_GPS := false
+
+BOARD_GRAVITY_SENSOR_SUPPORT := true
+BOARD_COMPASS_SENSOR_SUPPORT := false
+BOARD_GYROSCOPE_SENSOR_SUPPORT := false
+BOARD_PROXIMITY_SENSOR_SUPPORT := false
+BOARD_LIGHT_SENSOR_SUPPORT := true
+BOARD_PRESSURE_SENSOR_SUPPORT := false
+BOARD_TEMPERATURE_SENSOR_SUPPORT := false
+BOARD_USB_HOST_SUPPORT := true
+
+#for optee support
 PRODUCT_HAVE_OPTEE := true
+BOARD_USE_SPARSE_SYSTEM_IMAGE := true
 
+# Google Service and frp overlay
+BUILD_WITH_GOOGLE_MARKET := true
+BUILD_WITH_GOOGLE_MARKET_ALL := false
+BUILD_WITH_GOOGLE_FRP := true
 
+# Add widevine support
+BUILD_WITH_WIDEVINE := true

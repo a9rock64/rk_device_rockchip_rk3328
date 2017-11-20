@@ -1,11 +1,10 @@
-FIRMWARE_VER:7.1.0
-MACHINE_MODEL:rk3328-box
+FIRMWARE_VER:7.1
+MACHINE_MODEL:RK3328
 MACHINE_ID:007
-MANUFACTURER:RK30SDK
+MANUFACTURER:rk3126c
 MAGIC: 0x5041524B
-ATAG: 0x60000800
-MACHINE: 3228
+ATAG: 0x00200800
+MACHINE: 3328
 CHECK_MASK: 0x80
-KERNEL_IMG: 0x60408000
-#RECOVER_KEY: 1,1,0,20,0
-CMDLINE:console=ttyFIQ0 androidboot.baseband=N/A androidboot.selinux=permissive androidboot.hardware=rk30board androidboot.console=ttyFIQ0 init=/init mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00004000@0x00004000(trust),0x00002000@0x00008000(misc),0x00000800@0x0000A000(baseparamer),0x00007800@0x0000A800(resource),0x00010000@0x00012000(kernel),0x00010000@0x00022000(boot),0x00010000@0x00032000(recovery),0x00020000@0x00042000(backup),0x00040000@0x00062000(cache),0x00008000@0x000A2000(metadata),0x00002000@0x000AA000(kpanic),0x00300000@0x000AC000(system),-@0x003AC000(userdata)
+PWR_HLD: 0,0,A,0,1
+CMDLINE: console=ttyFIQ0 androidboot.baseband=N/A androidboot.selinux=permissive TODOandroidboot.veritymode=/dev/block/rknand_metadata androidboot.hardware=rk30board androidboot.console=ttyFIQ0 init=/init initrd=0x62000000,0x00800000 mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00002000@0x00004000(trust),0x00002000@0x00006000(misc),0x00008000@0x00008000(resource),0x00010000@0x00010000(kernel),0x00010000@0x00020000(boot),0x00010000@0x00030000(recovery),0x00038000@0x00040000(backup),0x00100000@0x00078000(cache),0x00400000@0x00178000(system),0x00008000@0x00578000(metadata),0x00100000@0x00580000(vendor),0x00100000@0x00682000(oem),0x00000400@0x00782000(frp),0x00001000@0x00782400(security),-@0x00783400(userdata)

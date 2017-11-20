@@ -15,7 +15,8 @@
 #
 
 $(call inherit-product, $(LOCAL_PATH)/rk3328.mk)
-$(call inherit-product, device/rockchip/common/tv/tv_base.mk)
+$(call inherit-product, device/google/atv/products/atv_base.mk)
+#$(call inherit-product, device/rockchip/common/tv/tv_base.mk)
 
 PRODUCT_BRAND := rockchip
 PRODUCT_MANUFACTURER := rockchip
