@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+TARGET_BOARD_PLATFORM_PRODUCT := atv
+
 # Use the non-open-source parts, if they're present
 -include vendor/rockchip/rk3328/BoardConfigVendor.mk
 -include device/rockchip/common/BoardConfig.mk
@@ -55,40 +57,28 @@ TARGET_PREFER_32_BIT_APPS :=
 TARGET_SUPPORTS_64_BIT_APPS := true
 endif
 
-ifneq ($(filter %box, $(TARGET_PRODUCT)), )
-TARGET_BOARD_PLATFORM_PRODUCT ?= box
-else
- ifneq ($(filter %vr, $(TARGET_PRODUCT)), )
-   TARGET_BOARD_PLATFORM_PRODUCT ?= vr
-else
-TARGET_BOARD_PLATFORM_PRODUCT ?= tablet
-endif
-endif
-
 ENABLE_CPUSETS := true
 
-# Enable Dex compile opt as default
-# WITH_DEXPREOPT := true
-
+BOARD_CAMERA_SUPPORT := false
 BOARD_NFC_SUPPORT := false
 BOARD_HAS_GPS := false
 
-BOARD_GRAVITY_SENSOR_SUPPORT := true
+BOARD_GRAVITY_SENSOR_SUPPORT := false
 BOARD_COMPASS_SENSOR_SUPPORT := false
 BOARD_GYROSCOPE_SENSOR_SUPPORT := false
 BOARD_PROXIMITY_SENSOR_SUPPORT := false
-BOARD_LIGHT_SENSOR_SUPPORT := true
+BOARD_LIGHT_SENSOR_SUPPORT := false
 BOARD_PRESSURE_SENSOR_SUPPORT := false
 BOARD_TEMPERATURE_SENSOR_SUPPORT := false
 BOARD_USB_HOST_SUPPORT := true
 
-#for optee support
-PRODUCT_HAVE_OPTEE := true
+# TODO for optee support
+PRODUCT_HAVE_OPTEE := false
+
 BOARD_USE_SPARSE_SYSTEM_IMAGE := true
 
-# Google Service and frp overlay
-BUILD_WITH_GOOGLE_MARKET := true
-BUILD_WITH_GOOGLE_MARKET_ALL := false
+# Google TV Service and frp overlay
+BUILD_WITH_GTVS := true
 BUILD_WITH_GOOGLE_FRP := true
 
 # Add widevine support

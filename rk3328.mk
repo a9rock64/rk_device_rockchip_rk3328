@@ -26,12 +26,8 @@ include device/rockchip/rk3328/BoardConfig.mk
 $(call inherit-product, device/rockchip/rk3328/product.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 
-PRODUCT_CHARACTERISTICS := box
-
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-        rild \
-        Launcher3
+#TODO TV?
+PRODUCT_CHARACTERISTICS := tv
 
 PRODUCT_NAME := rk3328
 PRODUCT_DEVICE := rk3328
@@ -43,3 +39,15 @@ PRODUCT_MANUFACTURER := rockchip
 # Get the long list of APNs
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
+
+PRODUCT_AAPT_CONFIG := normal tvdpi hdpi
+PRODUCT_AAPT_PREF_CONFIG := tvdpi
+
+# TV Input HAL
+PRODUCT_PACKAGES += \
+    android.hardware.tv.input@1.0-impl
+
+# HDMI CEC HAL
+PRODUCT_PACKAGES += \
+    android.hardware.tv.cec@1.0-impl
+

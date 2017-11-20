@@ -11,6 +11,7 @@ wifi.interface=wlan0
 rild.libpath=/system/lib/libril-rk29-dataonly.so
 rild.libargs=-d /dev/ttyACM0
 persist.tegra.nvmmlite = 1
+persist.sys.boot.check=false
 ro.audio.monitorOrientation=true
 
 #NFC
@@ -18,6 +19,7 @@ debug.nfc.fw_download=false
 debug.nfc.se=false
 
 #add Rockchip properties here
+ro.rk.screenoff_time=2147483647
 ro.rk.screenshot_enable=true
 ro.rk.def_brightness=200
 ro.rk.homepage_base=http://www.google.com/webhp?client={CID}&amp;source=android-home
@@ -37,11 +39,15 @@ sys.resolution.changed=false
 ro.default.size=100
 persist.sys.timezone=
 ro.product.usbfactory=rockchip_usb
+ro.support.lossless.bitstream=true
 wifi.supplicant_scan_interval=15
 ro.factory.tool=0
-#set default lcd density for rk3328 tablet
-ro.sf.lcd_density=240
-ro.adb.secure=0
+#set default lcd density for rk3328 box product
+ro.sf.lcd_density=320
+ro.adb.secure =0
 sys.hwc.enable=1
 #set wifi contry code
 ro.boot.wificountrycode=CN
+#set for video optimize 
+sys.video.netBuffer=20
+sys.video.refFrameMode=1
