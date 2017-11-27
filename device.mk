@@ -54,7 +54,6 @@ endif
 #
 PRODUCT_PROPERTY_OVERRIDES += \
 		ro.ril.ecclist=112,911 \
-		ro.opengles.version=196609 \
 		wifi.interface=wlan0 \
 		rild.libpath=/system/lib/libril-rk29-dataonly.so \
 		rild.libargs=-d /dev/ttyACM0 \
@@ -94,7 +93,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=21
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196609 \
+    ro.opengles.version=131072 \
     ro.hwui.drop_shadow_cache_size=4.0 \
     ro.hwui.gradient_cache_size=0.8 \
     ro.hwui.layer_cache_size=32.0 \
