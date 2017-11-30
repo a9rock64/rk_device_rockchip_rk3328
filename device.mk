@@ -49,6 +49,12 @@ PRODUCT_COPY_FILES += \
        device/rockchip/common/init.optee_verify.rc:root/init.optee.rc
 endif
 
+#tv_core_hardware_3328
+ifeq ($(strip $(TARGET_PRODUCT)),rk3328)
+PRODUCT_COPY_FILES += \
+    device/rockchip/rk3328/permissions/tv_core_hardware_3328.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/tv_core_hardware_3328.xml
+endif
+
 #
 #add Rockchip properties here
 #
