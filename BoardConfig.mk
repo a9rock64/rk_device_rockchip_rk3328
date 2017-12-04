@@ -83,3 +83,5 @@ BUILD_WITH_GOOGLE_FRP := true
 
 # Add widevine support
 BUILD_WITH_WIDEVINE := true
+
+DEVICE_MANIFEST_FILE := $(TARGET_DEVICE_DIR)/manifest.xml
