@@ -46,8 +46,3 @@ PRODUCT_AAPT_PREF_CONFIG := tvdpi
 # TV Input HAL
 PRODUCT_PACKAGES += \
     android.hardware.tv.input@1.0-impl
-
-# HDMI CEC HAL
-PRODUCT_PACKAGES += \
-    android.hardware.tv.cec@1.0-impl
-
