@@ -93,11 +93,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 		ro.adb.secure=0 \
 		persist.enable_task_snapshots=false
 
-# Some CTS tests will be skipped based on what the initial API level that
-# shipped on device was.
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.first_api_level=21
-
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
     ro.hwui.drop_shadow_cache_size=4.0 \
