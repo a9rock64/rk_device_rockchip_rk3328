@@ -60,39 +60,16 @@ endif
 #add Rockchip properties here
 #
 PRODUCT_PROPERTY_OVERRIDES += \
-		ro.ril.ecclist=112,911 \
-		wifi.interface=wlan0 \
-		rild.libpath=/system/lib/libril-rk29-dataonly.so \
-		rild.libargs=-d /dev/ttyACM0 \
-		persist.tegra.nvmmlite = 1 \
-		ro.audio.monitorOrientation=true \
-		debug.nfc.fw_download=false \
-		debug.nfc.se=false \
-		ro.rk.screenoff_time=60000 \
-		ro.rk.screenshot_enable=true \
-		ro.rk.def_brightness=200 \
-		ro.rk.homepage_base=http://www.google.com/webhp?client={CID}&amp;source=android-home \
-		ro.rk.install_non_market_apps=false \
-		sys.hwc.compose_policy=6 \
-		sys.wallpaper.rgb565=0 \
-		sf.power.control=2073600 \
-		sys.rkadb.root=0 \
-		ro.sf.fakerotation=false \
-		ro.sf.hwrotation=0 \
-		ro.rk.MassStorage=false \
-		ro.rk.systembar.voiceicon=true \
-		ro.rk.systembar.tabletUI=false \
-		ro.rk.LowBatteryBrightness=false \
-		ro.tether.denied=false \
-		sys.resolution.changed=false \
-		ro.default.size=100 \
-		ro.product.usbfactory=rockchip_usb \
-		wifi.supplicant_scan_interval=15 \
-		ro.factory.tool=0 \
-		ro.kernel.android.checkjni=0 \
-		ro.sf.lcd_density=240 \
-		ro.adb.secure=0 \
-		persist.enable_task_snapshots=false
+    wifi.interface=wlan0 \
+    ro.audio.monitorOrientation=true \
+    sys.hwc.compose_policy=6 \
+    sf.power.control=2073600 \
+    ro.tether.denied=false \
+    sys.resolution.changed=false \
+    ro.product.usbfactory=rockchip_usb \
+    wifi.supplicant_scan_interval=15 \
+    ro.kernel.android.checkjni=0 \
+    ro.adb.secure=0
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
@@ -105,8 +82,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.hwui.text_small_cache_width=1024 \
     ro.hwui.text_small_cache_height=512 \
     ro.hwui.texture_cache_flushrate=0.4 \
-    ro.hwui.texture_cache_size=48.0 \
+    ro.hwui.texture_cache_size=72.0
 
 # GTVS add the Client ID (provided by Google)
 PRODUCT_PROPERTY_OVERRIDES += \
- ro.com.google.clientidbase=android-acme
+    ro.com.google.clientidbase=android-acme
