@@ -41,8 +41,6 @@ ro.product.usbfactory=rockchip_usb
 ro.support.lossless.bitstream=true
 wifi.supplicant_scan_interval=15
 ro.factory.tool=0
-#set default lcd density for rk3328 box product
-ro.sf.lcd_density=320
 ro.adb.secure =0
 sys.hwc.enable=1
 #set wifi contry code
