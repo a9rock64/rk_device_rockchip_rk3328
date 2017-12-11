@@ -40,7 +40,7 @@ PRODUCT_MANUFACTURER := rockchip
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
 
-PRODUCT_AAPT_CONFIG := normal tvdpi hdpi
+PRODUCT_AAPT_CONFIG := normal large tvdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := tvdpi
 
 # TV Input HAL
