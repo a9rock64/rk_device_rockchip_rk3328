@@ -81,7 +81,7 @@ BOARD_USE_SPARSE_SYSTEM_IMAGE := true
 BUILD_WITH_GTVS := true
 BUILD_WITH_GOOGLE_FRP := true
 
-# Add widevine support
-BUILD_WITH_WIDEVINE := true
+# for widevine drm
+BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
 
 DEVICE_MANIFEST_FILE := $(TARGET_DEVICE_DIR)/manifest.xml
