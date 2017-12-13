@@ -16,7 +16,11 @@
 
 PRODUCT_PACKAGES += \
     libion \
-    memtrack.$(TARGET_BOARD_PLATFORM) \
+    memtrack.$(TARGET_BOARD_PLATFORM)
+
+# Add for test
+PRODUCT_PACKAGES += \
+    StressTest
 
 #enable this for support f2fs with data partion
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
