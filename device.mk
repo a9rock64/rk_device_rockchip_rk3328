@@ -74,8 +74,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.usbfactory=rockchip_usb \
     wifi.supplicant_scan_interval=15 \
     ro.kernel.android.checkjni=0 \
-    ro.adb.secure=0 \
+    ro.adb.secure=0
+
+ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT), box)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=213
+else
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320
+endif
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
