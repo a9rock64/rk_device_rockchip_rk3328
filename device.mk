@@ -22,6 +22,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     StressTest
 
+# Default integrate MediaCenter
+PRODUCT_PACKAGES += \
+    MediaCenter
+
 #enable this for support f2fs with data partion
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
