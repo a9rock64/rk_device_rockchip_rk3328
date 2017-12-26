@@ -20,7 +20,7 @@
 #define BTM_DEF_LOCAL_NAME	"rk3328"
 #define BTA_DM_COD {0x1A, 0x01, 0x10}
 
-#define BLE_PRIVACY_SPT FALSE
+#define BLE_PRIVACY_SPT TRUE
 #define BLE_VND_INCLUDED TRUE
 #endif
 
