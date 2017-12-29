@@ -24,7 +24,5 @@
     <feature name="android.software.app_widgets" />
     <feature name="com.google.android.feature.EXCHANGE_6_2" />
     <feature name="com.google.android.feature.GLOBAL_ASSIST_TRIGGERING" />
-    <feature name="com.google.android.feature.GOOGLE_BUILD" />
-    <feature name="com.google.android.feature.GOOGLE_EXPERIENCE" />
     <feature name="nrdp.modelgroup" />
 </permissions>
