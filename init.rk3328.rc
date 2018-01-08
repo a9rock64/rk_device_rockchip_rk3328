@@ -43,6 +43,9 @@ on boot
     # reduce schedul time to improve io performance
     write /sys/kernel/debug/sched_features NO_ENERGY_AWARE
 
+    # baseparameter
+    chmod 0666 /dev/block/mmcblk2p4
+
 on init
     # Load persistent dm-verity state
     verity_load_state
