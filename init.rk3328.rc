@@ -44,11 +44,11 @@ on boot
     write /sys/kernel/debug/sched_features NO_ENERGY_AWARE
 
     # baseparameter
-    chmod 0666 /dev/block/mmcblk2p4
+    chmod 0660 /dev/block/mmcblk2p4
 
 on init
     # Load persistent dm-verity state
     verity_load_state
 
     chown root root /sys/class/devfreq/dmc/system_status
-    chmod 0666 /sys/class/devfreq/dmc/system_status
+    chmod 0660 /sys/class/devfreq/dmc/system_status
