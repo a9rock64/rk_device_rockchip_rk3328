@@ -108,7 +108,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.hwui.text_small_cache_width=1024 \
     ro.hwui.text_small_cache_height=512 \
     ro.hwui.texture_cache_flushrate=0.4 \
-    ro.hwui.texture_cache_size=72.0
+    ro.hwui.texture_cache_size=72.0 \
+    debug.hwui.use_partial_updates=false
 
 # GTVS add the Client ID (provided by Google)
 PRODUCT_PROPERTY_OVERRIDES += \
