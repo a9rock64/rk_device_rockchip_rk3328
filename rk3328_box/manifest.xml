@@ -152,6 +152,15 @@
             <name>IHdmiCec</name>
             <instance>default</instance>
         </interface>
+	</hal>
+    <hal format="hidl">
+        <name>android.hardware.camera.provider</name>
+        <transport>hwbinder</transport>
+        <version>2.4</version>
+        <interface>
+            <name>ICameraProvider</name>
+            <instance>legacy/0</instance>
+        </interface>
     </hal>
     <sepolicy>
         <version>26.0</version>
