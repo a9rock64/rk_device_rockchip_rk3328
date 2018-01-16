@@ -41,7 +41,6 @@ ro.product.usbfactory=rockchip_usb
 ro.support.lossless.bitstream=true
 wifi.supplicant_scan_interval=15
 ro.factory.tool=0
-ro.adb.secure =0
 sys.hwc.enable=1
 #set wifi contry code
 ro.boot.wificountrycode=CN
