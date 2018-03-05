@@ -69,5 +69,5 @@ on init
     # Load persistent dm-verity state
     verity_load_state
 
-    chown system system /sys/class/devfreq/dmc/system_status
+    chown mediacodec system /sys/class/devfreq/dmc/system_status
     chmod 0660 /sys/class/devfreq/dmc/system_status
