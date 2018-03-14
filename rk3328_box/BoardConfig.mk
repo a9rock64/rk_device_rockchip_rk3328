@@ -15,6 +15,7 @@
 #
 
 TARGET_BOARD_PLATFORM_PRODUCT := box
+TARGET_BASE_PARAMETER_IMAGE := device/rockchip/common/baseparameter/baseparameter_fb720.img
 
 # Use the non-open-source parts, if they're present
 -include vendor/rockchip/rk3328/BoardConfigVendor.mk

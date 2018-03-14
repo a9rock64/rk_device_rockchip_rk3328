@@ -90,7 +90,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT), box)
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=213
+    ro.sf.lcd_density=160
 else
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320
