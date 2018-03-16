@@ -86,7 +86,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.usbfactory=rockchip_usb \
     wifi.supplicant_scan_interval=15 \
     ro.kernel.android.checkjni=0 \
-    sys.hwc.device.primary=HDMI-A,TV
+    sys.hwc.device.primary=HDMI-A,TV \
+    media.stagefright.extractremote=false \
+    persist.media.treble_omx=false
 
 ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT), box)
 PRODUCT_PROPERTY_OVERRIDES += \
