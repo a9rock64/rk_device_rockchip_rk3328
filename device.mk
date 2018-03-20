@@ -35,18 +35,19 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.rk3328.rc:root/init.rk3328.rc \
     $(LOCAL_PATH)/init.rk30board.usb.rc:root/init.rk30board.usb.rc \
     $(LOCAL_PATH)/wake_lock_filter.xml:system/etc/wake_lock_filter.xml \
-    device/rockchip/rk3328/package_performance.xml:$(TARGET_COPY_OUT_OEM)/etc/package_performance.xml \
-    device/rockchip/$(TARGET_BOARD_PLATFORM)/media_profiles_default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+    device/rockchip/rk3328/package_performance.xml:$(TARGET_COPY_OUT_OEM)/etc/package_performance.xml
 
 # copy input keylayout and device config
 ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT), box)
 PRODUCT_COPY_FILES += \
-    device/rockchip/rk3328/rk3328_box/ff1b0030_pwm.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/ff1b0030_pwm.kl
+    device/rockchip/rk3328/rk3328_box/ff1b0030_pwm.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/ff1b0030_pwm.kl \
+    device/rockchip/$(TARGET_BOARD_PLATFORM)/media_profiles_default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_default.xml
 else
 PRODUCT_COPY_FILES += \
     device/rockchip/rk3328/ff1b0030_pwm.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/ff1b0030_pwm.kl \
     device/rockchip/rk3328/ff1b0030_pwm.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/ff1b0030_pwm.idc \
-    device/rockchip/rk3328/virtual-remote.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/virtual-remote.idc
+    device/rockchip/rk3328/virtual-remote.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/virtual-remote.idc \
+    device/rockchip/$(TARGET_BOARD_PLATFORM)/media_profiles_default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 endif
 
 # setup dalvik vm configs.
