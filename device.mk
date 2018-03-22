@@ -18,10 +18,6 @@ PRODUCT_PACKAGES += \
     libion \
     memtrack.$(TARGET_BOARD_PLATFORM)
 
-# Add for test
-PRODUCT_PACKAGES += \
-    StressTest
-
 # Default integrate MediaCenter
 PRODUCT_PACKAGES += \
     MediaCenter
