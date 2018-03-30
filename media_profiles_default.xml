@@ -173,20 +173,6 @@
                    channels="1" />
         </EncoderProfile>
 
-         <!--  If your sensor driver don't support 576p stream, Please turn off this element -->
-
-        <EncoderProfile quality="576p" fileFormat="mp4" duration="30">
-            <Video codec="h264"
-                   bitRate="256000"
-                   width="720"
-                   height="576"
-                   frameRate="12" />
-
-            <Audio codec="aac"
-                   bitRate="61000"
-                   sampleRate="44100"
-                   channels="1" />
-        </EncoderProfile>
 
         <!--  If your sensor driver don't support 720p stream, Please turn off this element -->
 
@@ -317,22 +303,6 @@
                    sampleRate="44100"
                    channels="1" />
         </EncoderProfile>
-
-         <!--  If your sensor driver don't support 576p stream, Please fill this element according as
-              your sensor max resolution for preview(Not Capture resolution)  -->
-
-         <EncoderProfile quality="timelapse576p" fileFormat="mp4" duration="30">
-            <Video codec="h264"
-                   bitRate="1200000"
-                   width="720"
-                   height="576"
-                   frameRate="15" />
-            
-            <Audio codec="aac"
-                   bitRate="61000"
-                   sampleRate="44100"
-                   channels="1" />	
-        </EncoderProfile> 
 
         <!--  If your sensor driver don't support 720p stream, Please turn off this element -->
 
