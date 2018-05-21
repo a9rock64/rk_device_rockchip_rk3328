@@ -47,3 +47,4 @@ ro.boot.wificountrycode=CN
 #set for video optimize 
 sys.video.netBuffer=20
 sys.video.refFrameMode=0
+ro.nrdp.modelgroup=NEXUSPLAYERFUGU
