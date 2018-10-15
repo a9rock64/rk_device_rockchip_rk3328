@@ -30,6 +30,7 @@
     <feature name="android.software.cts" />
     <feature name="android.software.voice_recognizers" />
     <feature name="android.software.leanback_only" />
+    <feature name="android.software.cant_save_state" />
     <!--
     <feature name="android.software.leanback" />
     <feature name="android.software.live_tv" />

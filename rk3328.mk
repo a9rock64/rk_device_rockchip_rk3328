@@ -46,3 +46,6 @@ PRODUCT_AAPT_PREF_CONFIG := tvdpi
 # TV Input HAL
 PRODUCT_PACKAGES += \
     android.hardware.tv.input@1.0-impl
+# For Mid Setting
+PRODUCT_PACKAGES += \
+       Settings

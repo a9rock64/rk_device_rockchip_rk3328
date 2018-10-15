@@ -16,6 +16,10 @@ on early-init
     chown root system /sys/class/devfreq/ff300000.gpu/max_freq
     chmod 0664 /sys/class/devfreq/ff300000.gpu/max_freq
 
+on property:ro.boot.storagemedia=emmc
+   setprop ro.vendor.storagemedia emmc
+on property:ro.boot.storagemedia=nand
+   setprop ro.vendor.storagemedia nand
 on property:sys.boot_completed=1
     # recover cpu freq
     chmod  0644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
@@ -62,6 +66,8 @@ on boot
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/top-app/cpus 0-3
+    chown root system /dev/cec0
+    chmod 0664 /dev/cec0
     #TODO chown root system /sys/class/display/HDMI/color
     #TODO chmod 0666 /sys/class/display/HDMI/color
     #TODO chmod 0666 /sys/class/display/HDMI/mode
@@ -79,6 +85,8 @@ on boot
     # baseparameter
     chown system system /dev/block/mmcblk2p4
     chmod 0660 /dev/block/mmcblk2p4
+    chown system system /dev/block/rknand_baseparameter
+    chmod 0660 /dev/block/rknand_baseparameter
 
 on init
     # Load persistent dm-verity state

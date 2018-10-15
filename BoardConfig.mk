@@ -28,12 +28,23 @@ TARGET_CPU_VARIANT := cortex-a53
 TARGET_CPU_SMP := true
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_PREBUILT_KERNEL := kernel/arch/arm64/boot/Image
-PRODUCT_PACKAGE_OVERLAYS += device/rockchip/rk3328/overlay
+
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_AVB_ENABLE := true
+ifneq ($(filter true, $(BOARD_AVB_ENABLE)), )
+BOARD_KERNEL_CMDLINE := console=ttyFIQ0 androidboot.baseband=N/A androidboot.selinux=enforcing androidboot.wificountrycode=US androidboot.veritymode=enforcing androidboot.hardware=rk30board androidboot.console=ttyFIQ0 firmware_class.path=/vendor/etc/firmware init=/init rootwait ro init=/init
+PRODUCT_COPY_FILES += \
+        frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
+else
+#Config the cmdline for boot or recpvery
+BOARD_KERNEL_CMDLINE := console=ttyFIQ0 androidboot.baseband=N/A androidboot.selinux=enforcing androidboot.wificountrycode=US androidboot.veritymode=enforcing androidboot.hardware=rk30board androidboot.console=ttyFIQ0 firmware_class.path=/vendor/etc/firmware init=/init rootwait ro init=/init root=PARTUUID=af01642c-9b84-11e8-9b2a-234eb5e198a0
+endif
+BOARD_KERNEL_CMDLINE += loop.max_part=7
 
 
 # Disable emulator for "make dist" until there is a 64-bit qemu kernel
@@ -60,6 +71,7 @@ endif
 ENABLE_CPUSETS := true
 
 BOARD_CAMERA_SUPPORT := false
+BOARD_CAMERA_SUPPORT_EXT := true
 BOARD_NFC_SUPPORT := false
 BOARD_HAS_GPS := false
 
@@ -87,4 +99,6 @@ BUILD_WITH_GOOGLE_FRP := true
 # for widevine drm
 BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 1
 
+#for microsoft drm
+BUILD_WITH_MICROSOFT_PLAYREADY :=true
 DEVICE_MANIFEST_FILE := $(TARGET_DEVICE_DIR)/manifest.xml
