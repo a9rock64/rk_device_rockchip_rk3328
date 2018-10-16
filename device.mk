@@ -48,13 +48,14 @@ PRODUCT_COPY_FILES += \
 # copy input keylayout and device config
 ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT), box)
 PRODUCT_COPY_FILES += \
-    device/rockchip/rk3328/rk3328_box/ff1b0030_pwm.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/ff1b0030_pwm.kl \
+    device/rockchip/rk3328/rk3328_box/ff1b0030_pwm.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/ff1b0030_pwm.kl 
+
 else
 PRODUCT_COPY_FILES += \
-    device/rockchip/rk3128h/110b0030_pwm.kl:system/usr/keylayout/110b0030_pwm.kl \
-    device/rockchip/rk3128h/ff1b0030_pwm.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/ff1b0030_pwm.kl \
-    device/rockchip/rk3128h/ff1b0030_pwm.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/ff1b0030_pwm.idc \
-    device/rockchip/rk3128h/virtual-remote.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/virtual-remote.idc
+    device/rockchip/rk3328/110b0030_pwm.kl:system/usr/keylayout/110b0030_pwm.kl \
+    device/rockchip/rk3328/ff1b0030_pwm.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/ff1b0030_pwm.kl \
+    device/rockchip/rk3328/ff1b0030_pwm.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/ff1b0030_pwm.idc \
+    device/rockchip/rk3328/virtual-remote.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/virtual-remote.idc
 endif
 
 # setup dalvik vm configs.
