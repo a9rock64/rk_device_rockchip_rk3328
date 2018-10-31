@@ -62,4 +62,13 @@
 
     <!-- Package of the unbundled tv remote service which can connect to tv remote provider -->
     <string translatable="false" name="config_tvRemoteServicePackage">com.google.android.tv.remote.service</string>
+    <string-array translatable="false" name="config_globalActionsList">
+        <item>power</item>
+        <item>restart</item>
+        <item>logout</item>
+        <item>bugreport</item>
+        <item>screenshot</item>
+    </string-array>
+    <bool name="config_supportAutoRotation">false</bool>
+    <bool name="config_enableAutoPowerModes">false</bool>
 </resources>
