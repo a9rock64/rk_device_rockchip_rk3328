@@ -92,7 +92,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.supplicant_scan_interval=15 \
     ro.kernel.android.checkjni=0 \
     ro.vendor.nrdp.modelgroup=NEXUSPLAYERFUGU \
-    vendor.hwc.device.primary=HDMI-A,TV
+    vendor.hwc.device.primary=HDMI-A,TV \
+    ro.vendor.sdkversion=RK3328_ANDROID9.0_BOX_V1.0
 
 ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT), box)
 PRODUCT_PROPERTY_OVERRIDES += \
