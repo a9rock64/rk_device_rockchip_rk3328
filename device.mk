@@ -78,6 +78,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.gamepad.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.gamepad.xml
 endif
 
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-impl \
+    memtrack.$(TARGET_BOARD_PLATFORM)
+
 #
 #add Rockchip properties here
 #
