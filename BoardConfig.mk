@@ -34,6 +34,9 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_PREBUILT_KERNEL := kernel/arch/arm64/boot/Image
 
+# support devices to install magisk through include ramdisk in boot.img
+BOOTIMG_SUPPORT_MAGISK := false
+
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_AVB_ENABLE := true
 ifneq ($(filter true, $(BOARD_AVB_ENABLE)), )
@@ -44,6 +47,11 @@ else
 #Config the cmdline for boot or recpvery
 BOARD_KERNEL_CMDLINE := console=ttyFIQ0 androidboot.baseband=N/A androidboot.selinux=enforcing androidboot.wificountrycode=US androidboot.veritymode=enforcing androidboot.hardware=rk30board androidboot.verifiedbootstate=orange androidboot.console=ttyFIQ0 firmware_class.path=/vendor/etc/firmware init=/init rootwait ro init=/init root=PARTUUID=af01642c-9b84-11e8-9b2a-234eb5e198a0
 endif
+
+ifneq ($(filter true, $(BOOTIMG_SUPPORT_MAGISK)), )
+BOARD_KERNEL_CMDLINE += skip_initramfs
+endif
+
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 
 
