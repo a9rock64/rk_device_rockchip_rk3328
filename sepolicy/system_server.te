@@ -1,2 +1,0 @@
-allow system_server pppoe_service:service_manager { add find };
-allow system_server drm_device_management_service:service_manager { add find };
