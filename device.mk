@@ -98,14 +98,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.android.checkjni=0 \
     ro.vendor.nrdp.modelgroup=NEXUSPLAYERFUGU \
     vendor.hwc.device.primary=HDMI-A,TV \
-    ro.vendor.sdkversion=RK3328_ANDROID9.0_BOX_V1.0
+    ro.vendor.sdkversion=RK3328_ANDROID9.0_BOX_V1.0 \
+    persist.sys.usb.config=mtp
 
 ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT), box)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=160
 else
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=320
+    ro.sf.lcd_density=213
 endif
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -124,7 +125,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # GTVS add the Client ID (provided by Google)
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.clientidbase=android-acme
+    ro.com.google.clientidbase=android-rockchip-tv
 
 # Vendor seccomp policy files for media components:
 PRODUCT_COPY_FILES += \
