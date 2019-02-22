@@ -98,15 +98,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.android.checkjni=0 \
     ro.vendor.nrdp.modelgroup=NEXUSPLAYERFUGU \
     vendor.hwc.device.primary=HDMI-A,TV \
-    ro.vendor.sdkversion=RK3328_ANDROID9.0_BOX_V1.0 \
-    persist.sys.usb.config=mtp
+    ro.vendor.sdkversion=RK3328_ANDROID9.0_BOX_V1.1
 
 ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT), box)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=160
 else
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=213
+    ro.sf.lcd_density=213 \
+    persist.sys.usb.config=mtp
 endif
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
