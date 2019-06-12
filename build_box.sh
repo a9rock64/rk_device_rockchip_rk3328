@@ -3,7 +3,7 @@ ARCH=arm64
 LUNCH=rk3328_box-userdebug
 UBOOT_DEFCONFIG=rk3328
 KERNEL_DEFCONFIG=rockchip_defconfig
-KERNEL_DTS=rk3328-evb-android-avb
+KERNEL_DTS=rk3328-rock64-android-avb
 JOBS=12
 
 usage()
