@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+GAPPS_VARIANT := mini
+
 #overlay config
 ifeq ($(TARGET_BOARD_PLATFORM_PRODUCT), box)
 PRODUCT_PACKAGE_OVERLAYS += device/rockchip/rk3328/rk3328_box/overlay
@@ -133,4 +135,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
+
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+
 
